@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".Activities.MainActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/app_color_3">
+
+    <LinearLayout
+        android:id="@+id/main_linear_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/rick_and_morty_logo"
+            android:background="@color/app_color_3"
+            android:layout_margin="10dp"
+            android:contentDescription="@string/logo_name">
+        </ImageView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="5dp">
+
+            <ImageButton
+                android:id="@+id/location_list_image_button"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/baseline_location_on"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/image_button_location">
+            </ImageButton>
+
+            <TextView
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/locations_and_characters"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/dark_text_color"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="12sp"
+                android:autoSizeMaxTextSize="24sp"
+                tools:targetApi="o">
+            </TextView>
+
+            <ImageButton
+                android:id="@+id/character_list_image_button"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/baseline_people"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/image_button_character">
+            </ImageButton>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_weight="1"
+                android:id="@+id/locations_recycler_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <ProgressBar
+                android:id="@+id/progress_bar_for_locations"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminate="true"
+                android:progressDrawable="@drawable/style_progress_bar"
+                android:layout_gravity="center">
+            </ProgressBar>
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/progress_bar_for_characters"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:progressDrawable="@drawable/style_progress_bar">
+        </ProgressBar>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/characters_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <LinearLayout
+            android:id="@+id/character_list_empty_linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/app_color_3"
+                android:src="@drawable/no_data"
+                android:scaleType="fitCenter"
+                android:contentDescription="@string/image_empty"
+                android:layout_gravity="center">
+            </ImageView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/no_data"
+                android:textStyle="bold"
+                android:fontFamily="@font/avenir_book"
+                android:textSize="20sp"
+                android:textColor="@color/dark_text_color"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:layout_gravity="center">
+            </TextView>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
